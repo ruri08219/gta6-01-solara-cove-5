@@ -5,6 +5,12 @@
 // part-2/part-3 updater each frame. The start screen lives in index.html
 // and calls window.Solara.startGame(); the pause menu calls resumeGame().
 
+import './hud.js';
+import './minimap.js';
+import './crew.js';
+import './radio.js';
+import './save.js';
+import './audio.js';
 import './police.js';
 import './jobs.js';
 import './combat.js';
