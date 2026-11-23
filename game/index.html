@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLARA COVE — a sun-soaked open-world crime game</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0e1a24; font-family: Verdana, Geneva, sans-serif; }
+  #game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  .screen { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; text-align: center; background: linear-gradient(180deg, rgba(10, 30, 48, 0.82), rgba(255, 150, 60, 0.28)); z-index: 10; }
+  .screen h1 { font-size: 64px; letter-spacing: 6px; margin: 0; color: #ffd76e; text-shadow: 0 4px 0 #b3541e, 0 8px 24px rgba(0, 0, 0, 0.6); }
+  .screen h2 { font-size: 18px; font-weight: normal; margin: 12px 0 28px; color: #ffe9c4; }
+  .screen button { font-size: 22px; padding: 14px 44px; border: none; border-radius: 8px; background: #ffb62e; color: #231303; font-weight: bold; cursor: pointer; box-shadow: 0 4px 0 #b3541e; }
+  .screen button:hover { background: #ffc94d; }
+  .controls { margin-top: 30px; font-size: 14px; line-height: 1.9; color: #e8f2f8; background: rgba(0, 0, 0, 0.35); padding: 12px 26px; border-radius: 8px; }
+  .controls b { color: #ffd76e; }
+  .fine { margin-top: 22px; font-size: 12px; color: #c8d8e2; }
+  #pause-screen { display: none; }
+  #hint-bar { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 5; background: rgba(0, 0, 0, 0.6); color: #fff; font-size: 14px; padding: 10px 20px; border-radius: 20px; opacity: 0.55; transition: opacity 0.4s; pointer-events: none; white-space: nowrap; }
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>
+</head>
+<body>
+<canvas id="game" aria-label="SOLARA COVE: explore the bay city on foot or by car"></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+
+<div id="start-screen" class="screen">
+  <h1>SOLARA COVE</h1>
+  <h2>A sun-soaked bay city. Steal a car. Outrun the Cove City Police. Run the jobs. Earn respect.</h2>
+  <button id="start-button" type="button">START THE DAY</button>
+  <div class="controls">
+    <b>WASD</b> move / drive &nbsp;·&nbsp; <b>Mouse</b> look around (click to lock) &nbsp;·&nbsp; <b>E</b> steal / exit a car<br>
+    <b>Space</b> jump / handbrake &nbsp;·&nbsp; <b>Shift</b> sprint &nbsp;·&nbsp; <b>Esc</b> pause
+  </div>
+  <div class="fine">An original game: its own city, characters, vehicles and story. No Rockstar / GTA names or assets.<br>Four districts: Marina · Old Town · Harbor · Hillside. Eight story jobs wait for a crew that can handle them.</div>
+</div>
+
+<div id="pause-screen" class="screen">
+  <h1>PAUSED</h1>
+  <h2>The cove waits for you.</h2>
+  <button id="resume-button" type="button">RESUME</button>
+  <div class="controls"><button id="restart-button" type="button" style="font-size:15px;padding:8px 22px;">RESTART DAY</button></div>
+</div>
+
+<div id="hint-bar">Welcome to Solara Cove</div>
+
+<script src="./vendor/three.min.js"></script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
