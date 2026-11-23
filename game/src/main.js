@@ -5,6 +5,9 @@
 // part-2/part-3 updater each frame. The start screen lives in index.html
 // and calls window.Solara.startGame(); the pause menu calls resumeGame().
 
+import './police.js';
+import './jobs.js';
+import './combat.js';
 import { Solara, PLAYER, CITY, districtAt, clamp } from './config.js';
 import { buildCity, colliders } from './city.js';
 import { buildWorld, updateWorld } from './world.js';
