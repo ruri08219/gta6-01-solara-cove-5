@@ -11,6 +11,7 @@ import './crew.js';
 import './radio.js';
 import './save.js';
 import './audio.js';
+import './spawn.js'; // Part 4: unstick-spawn updater (rewritten under this recording)
 import './police.js';
 import './jobs.js';
 import './combat.js';

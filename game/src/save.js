@@ -1,5 +1,5 @@
 // SOLARA COVE — save.js
-// One job: the save system. LocalStorage key 'solara-cove-save'. F saves
+// One job: the save system. LocalStorage key 'solara-cove-save'. G saves
 // the run (cash, respect, rank, jobs done + active job + stage, player
 // position, in-game clock). When a save exists, a "Continue" button is
 // added to the start screen dynamically (this file never edits index.html).
@@ -122,15 +122,15 @@ function addContinueButton() {
   const controls = startScreen.querySelector('.controls');
   if (controls) {
     const extra = document.createElement('div');
-    extra.textContent = 'F save game · M mute · R change radio · 1 / 2 / 3 crew abilities';
+    extra.textContent = 'G save game · M mute · R change radio · 1 / 2 / 3 crew abilities';
     controls.appendChild(extra);
   }
 }
 
 function updateSave(dt, t) {
-  // F saves the run (edge-triggered). NOTE: combat.js also fires a shot on
-  // F — the save still lands; see the part-3 report for the key conflict.
-  if (wasPressed('KeyF') && (Solara.phase === 'PLAY' || Solara.phase === 'PAUSED')) {
+  // G saves the run (edge-triggered). Moved from F in part 4: combat.js
+  // fires a shot on F, so saving on F also shot — now save is G only.
+  if (wasPressed('KeyG') && (Solara.phase === 'PLAY' || Solara.phase === 'PAUSED')) {
     if (writeSave()) Solara.audio.click?.();
   }
 }
